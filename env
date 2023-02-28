@@ -1,0 +1,11 @@
+#DKR_VOL_JENKINS_HOME=/data/jenkins # External volume - owned by jenkins user
+DKR_VOL_JENKINS_HOME=jenkins_home # Internal volume
+DKR_HOST_UID=1111
+DKR_HOST_GID=999
+DKR_NO_PROXY=localhost,127.0.0.1,localaddress,localdomain.com
+
+DKR_CNTLM_DOMAIN=domain
+DKR_CNTLM_PROXY=proxy
+DKR_NO_PROXY=noproxy
+DKR_CNTLM_USER=user
+DKR_CNTLM_PASSWORD=password
