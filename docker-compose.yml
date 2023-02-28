@@ -1,0 +1,33 @@
+services:
+  jenkins:
+    build:
+      context: .
+      args:
+        DKR_VOL_JENKINS_HOME: $DKR_VOL_JENKINS_HOME
+        DKR_HOST_UID: $DKR_HOST_UID
+        DKR_HOST_GID: $DKR_HOST_GID
+        DKR_NO_PROXY: $DKR_NO_PROXY
+        DKR_CNTLM_DOMAIN: $DKR_CNTLM_DOMAIN
+        DKR_CNTLM_PROXY: $DKR_CNTLM_PROXY
+        DKR_NO_PROXY: $DKR_NO_PROXY
+        DKR_CNTLM_USER: $DKR_CNTLM_USER
+        DKR_CNTLM_PASSWORD: $DKR_CNTLM_PASSWORD
+    image: jenkins
+    container_name: jenkins
+    hostname: jenkins
+    environment:
+      - JENKINS_OPTS=--httpPort=9080
+    ports:
+      - "9080:9080"
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - $DKR_VOL_JENKINS_HOME:/var/jenkins_home
+    networks:
+      - default
+volumes:
+  jenkins_home:
+    name: jenkins_home
+networks:
+  default:
+    name: jenkins

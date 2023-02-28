@@ -1,0 +1,3 @@
+For firewalls doing TLS inspection, drop the *.crt files here, they will be added to the relevant trust stores with alias being the file name. Usually only root needed. e.g.
+my_tls_root_cert.crt
+my_tls_sub_cert.crt

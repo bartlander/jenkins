@@ -1,0 +1,3 @@
+volname=${1:-tmp}
+echo "docker run --name tmp -d -v $volname:/data busybox"
+docker run --name tmp -d -v $volname:/data busybox
